@@ -14,5 +14,5 @@ fn main() {
             u: 22684.248437352602,
         },
     };
-    assert_eq!(segment.evaluate(segment.end), 0.12764305320171115_f64);
+    segment.evaluate(segment.end) == 0.12764305320171115_f64;
 }
