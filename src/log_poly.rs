@@ -393,18 +393,21 @@ impl Evaluate for IntOfLogPoly4 {
             let c3: f64 = self.coeffs[2];
             let c4: f64 = self.coeffs[3];
             let c5: f64 = self.u * taylor::exp_5_taylor(x);
+            dbg!(c0, c1, c2, c3, c4, c5);
 
             let t0 = c1.mul_add(x, c0);
             let t1 = c3.mul_add(x, c2);
             let t2 = c5.mul_add(x, c4);
+            dbg!(t0, t1, t2);
 
             let x2 = x * x;
             let x4 = x2 * x2;
+            dbg!(x2, x4);
 
             t2.mul_add(x4, t1.mul_add(x2, t0))
         };
-
-        v.mul_add(cr, self.k)
+        dbg!(v, cr, self.k);
+        dbg!(v.mul_add(cr, self.k))
     }
 }
 
