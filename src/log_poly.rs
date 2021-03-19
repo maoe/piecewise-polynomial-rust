@@ -275,7 +275,7 @@ mod taylor {
         let c2: f64 = -1.0 / 6.0;
         let c3: f64 = -1.0 / 2.0;
         let c4: f64 = -1.0;
-        let c5: f64 = x.recip().exp() - 1.0;
+        let c5: f64 = libm::exp(x.recip()) - 1.0;
 
         let x2 = x * x;
         let x4 = x2 * x2;
