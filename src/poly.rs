@@ -1050,6 +1050,7 @@ impl RelativeEq for Poly8 {
 }
 
 #[cfg(test)]
+#[allow(clippy::clippy::float_cmp)]
 mod tests {
     // Test results taken from the reference Haskell implementation.
 
