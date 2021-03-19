@@ -24,7 +24,7 @@ impl<T: MulAssign<f64>> MulAssign<f64> for Log<T> {
 
 impl<T: Evaluate> Evaluate for Log<T> {
     fn evaluate(&self, v: f64) -> f64 {
-        self.0.evaluate(v.ln())
+        self.0.evaluate(libm::log(v))
     }
 }
 
@@ -122,7 +122,7 @@ impl<T: Neg> Neg for IntOfLog<T> {
 
 impl<T: Evaluate> Evaluate for IntOfLog<T> {
     fn evaluate(&self, v: f64) -> f64 {
-        self.k + self.poly.evaluate(v.ln())
+        self.k + self.poly.evaluate(libm::log(v))
     }
 }
 
@@ -386,7 +386,7 @@ mod taylor {
 
 impl Evaluate for IntOfLogPoly4 {
     fn evaluate(&self, v: f64) -> f64 {
-        let x = v.ln().neg();
+        let x = libm::log(v).neg();
 
         let cr = {
             let c0: f64 = 0.0;
