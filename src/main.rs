@@ -1,4 +1,4 @@
-use piecewise_polynomial::{Evaluate, IntOfLogPoly4, Segment};
+use piecewise_polynomial::{Evaluate, IntOfLogPoly4};
 
 fn main() {
     let poly = IntOfLogPoly4 {
@@ -11,5 +11,5 @@ fn main() {
         ],
         u: 22684.248437352602,
     };
-    poly.evaluate(1.1276353206339418) == 0.12764305320171115_f64;
+    assert_eq!(poly.evaluate(1.1276353206339418), 0.12764305320171118);
 }
