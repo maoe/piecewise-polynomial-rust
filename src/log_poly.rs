@@ -384,7 +384,7 @@ mod taylor {
 
 impl Evaluate for IntOfLogPoly4 {
     fn evaluate(&self, v: f64) -> f64 {
-        let x = v.ln().neg();
+        let x = libm::log(v).neg();
         dbg!(x);
 
         let cr = {
