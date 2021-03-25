@@ -609,6 +609,8 @@ impl HasIntegral for Log<Poly8> {
 #[cfg(test)]
 #[allow(clippy::float_cmp)]
 mod tests {
+    extern crate openlibm_src as _;
+
     use super::*;
 
     #[test]

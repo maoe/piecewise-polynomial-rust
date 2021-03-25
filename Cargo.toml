@@ -14,6 +14,7 @@ serde = { version = "1.0.123", features = ["derive"] }
 [dev-dependencies]
 assert_approx_eq = "1.1.0"
 criterion = "0.3.4"
+openlibm-src = { git = "https://github.com/maoe/openlibm-rs.git", branch = "master" }
 
 [[bench]]
 name = "poly_evaluate"
